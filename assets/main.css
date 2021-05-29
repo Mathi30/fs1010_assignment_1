@@ -1,0 +1,238 @@
+/* 
+===============
+Variable
+===============
+*/
+:root {
+  --primaryColor: #f15025;
+  --mainBlack: #222;
+  --mainWhite: #fff;
+  --darGrey: #afafaf;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 0.2rem;
+  --mainBackground: #d5d5d5;
+}
+/* 
+===============
+Global Styles
+===============
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: var(--mainBlack);
+  background: var(--mainBackground);
+  line-height: 1.5;
+}
+
+/* img {
+  width: 100%;
+  height: 100%;
+  display: block;
+} */
+
+a {
+  text-decoration: none;
+}
+a:hover {
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+}
+
+h1 {
+  text-transform: capitalize;
+  left: var(--mainSpacing);
+  margin-bottom: 0.25rem;
+  font-size: 3rem;
+}
+
+p {
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 2;
+  text-transform: capitalize;
+}
+
+/* 
+===============
+image container 
+===============
+*/
+
+.image-section {
+  padding: 2rem 0;
+}
+
+.image-container {
+  width: 60vw;
+  max-width: 1100px;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 200px);
+  grid-template-areas:
+    "a b c"
+    "d b e"
+    "d f e";
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.hide:hover {
+  opacity: 1;
+}
+
+.image {
+  opacity: 1;
+  border: 1px solid var(--darGrey);
+  position: relative;
+}
+.image:hover {
+  width: auto;
+  opacity: 1;
+  border: 5px solid var(--darGrey);
+  position: absolute;
+  color: var(--mainWhite);
+}
+.image-1 {
+  grid-area: a;
+  background: url(./city-skyline.jpg) center/cover;
+}
+
+.image-1:hover {
+  width: 345px;
+  height: 195px;
+  background: linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.3),
+      rgba(255, 100, 239, 0.5)
+    ),
+    url("./city-skyline.jpg") center/cover;
+}
+
+.image-2 {
+  grid-area: b;
+  background: url(./cn-tower.jpg) center/cover;
+}
+
+.image-2:hover {
+  width: 345px;
+  height: 390px;
+  left: 720px;
+  background: linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.3),
+      rgba(255, 100, 239, 0.5)
+    ),
+    url("./cn-tower.jpg") center/cover;
+}
+
+.image-3 {
+  grid-area: c;
+  background: url(./rogers-center.jpg) center/cover;
+}
+
+.image-3:hover {
+  height: 190px;
+  width: 345px;
+  left: 1100px;
+  background: linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.3),
+      rgba(255, 100, 239, 0.5)
+    ),
+    url("./rogers-center.jpg") center/cover;
+}
+
+.image-4 {
+  grid-area: d;
+  background: url(./old-city-hall.jpg) center/cover;
+}
+
+.image-4:hover {
+  height: 400px;
+  width: 345px;
+  top: 470px;
+  background: linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.3),
+      rgba(255, 100, 239, 0.5)
+    ),
+    url("./old-city-hall.jpg") center/cover;
+}
+
+.image-5 {
+  grid-area: f;
+  background: url(./rom.jpg) center/cover;
+}
+
+.image-5:hover {
+  height: 190px;
+  width: 345px;
+  top: 670px;
+  left: 730px;
+  background: linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.3),
+      rgba(255, 100, 239, 0.5)
+    ),
+    url("./rom.jpg") center/cover;
+}
+
+.image-6 {
+  grid-area: e;
+  background: url(./new-city-hall.jpg) center/cover;
+}
+
+.image-6:hover {
+  height: 400px;
+  width: 345px;
+  top: 470px;
+  left: 1100px;
+  background: linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.3),
+      rgba(255, 100, 239, 0.5)
+    ),
+    url("./new-city-hall.jpg") center/cover;
+}
+
+.image-header {
+  width: 60vw;
+  max-width: 1100px;
+  margin: 2rem auto;
+}
+
+.image-footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+  width: 60vw;
+  margin: 3rem auto;
+  background: var(--darGrey);
+  padding: 0.5rem 1rem;
+}
+
+span {
+  text-transform: capitalize;
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 2;
+}
+
+h3 {
+  text-transform: capitalize;
+  left: var(--mainSpacing);
+  margin-bottom: 0.25rem;
+  font-size: 1.5rem;
+}
