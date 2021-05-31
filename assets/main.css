@@ -57,7 +57,7 @@ h3 {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 0.8rem;
   line-height: var(--lineHeight)
   text-transform: capitalize;
 }
@@ -80,9 +80,130 @@ header Styles
 main container Styles
 =====================
 */
+/* single column layout */
 .main-container {
   width: 60vw;
   max-width: 1100px;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: repeat(1fr);
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+
+/*  
+====================
+single container Styles
+=====================
+*/
+
+.single-container {
+  position: relative;
+  opacity: 1;
+  border: 10px solid var(--darGrey);
+  overflow: hidden;
+}
+
+.image-details {
+  position: absolute;
+  text-align: center;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 100%;
+  height: 100%;
+  /* transistion start from */
+  top: 0%;
+  left: 0%;
+  transform: translate(-100%, -100%);
+  transition: var(--mainTransition);
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+}
+
+.single-container:hover .image-details {
+ /* transistion end to */
+  top: 100%;
+  left: 100%;
+  opacity: 1;
+}
+
+.image-details  {
+  color: var(--mainWhite);
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+
+.image-title {
+text-transform: uppercase;
+text-decoration: black;
+font-size: 1rem;
+}
+
+/* 
+===============
+footer Styles
+===============
+*/
+
+.image-footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+  width: 40vw;
+  margin: 3rem auto;
+  padding: 0.5rem 1rem;
+}
+
+/* change icon font color */
+.text-dark {
+  color: var(--mainBlack);
+  padding: 5px;
+}
+/* two columns layout */
+@media screen and (min-width: 576px) {
+  .main-container {
+    width: 80vw;
+    max-width: 900px;
+    margin: 1rem auto;
+    display: grid;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 200px);
+    grid-template-areas:
+      "a a"
+      "b c"
+      "d c"
+      "d e"
+      "f e";
+    column-gap: 1rem;
+    row-gap: 1rem;
+  }
+  .container-1 {
+  grid-area: a;
+  }
+  .container-3 {
+  grid-area: b;
+}
+.container-2 {
+  grid-area: c;
+}
+.container-4 {
+  grid-area: d;
+}
+.container-6 {
+  grid-area: e;
+}
+.container-5 {
+  grid-area: f;
+}
+}
+/* three cloumns */
+@media screen and (min-width: 768px) {
+.main-container {
+  width: 90vw;
+  max-width: 900px;
   margin: 1rem auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -113,70 +234,4 @@ main container Styles
 .container-6 {
   grid-area: e;
 }
-
-/*  
-====================
-single container Styles
-=====================
-*/
-
-.single-container {
-  position: relative;
-  opacity: 1;
-  border: 10px solid var(--darGrey);
-  overflow: hidden;
-}
-
-.image-details {
-  position: absolute;
-  text-align: center;
-  padding-left: 1em;
-  padding-right: 1em;
-  width: 100%;
-  height: 100%;
-  top: 0%;
-  left: 0%;
-  transform: translate(-100%, -100%);
-  transition: var(--mainTransition);
-  background: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-}
-
-.single-container:hover .image-details {
-  top: 100%;
-  left: 100%;
-  opacity: 1;
-}
-
-.image-details  {
-  color: var(--mainWhite);
-  text-transform: capitalize;
-  letter-spacing: var(--mainSpacing);
-}
-
-.image-title {
-text-transform: uppercase;
-font-weight: lighter;
-}
-
-/* 
-===============
-footer Styles
-===============
-*/
-
-.image-footer {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  justify-items: center;
-  align-items: center;
-  width: 40vw;
-  margin: 3rem auto;
-  padding: 0.5rem 1rem;
-}
-
-/* change icon font color */
-.text-dark {
-  color: var(--mainBlack);
-  padding: 5px;
 }
